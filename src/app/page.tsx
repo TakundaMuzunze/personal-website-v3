@@ -1,7 +1,3 @@
 export default function Home() {
-  return (
-    <main>
-      <div>Hello world!</div>
-    </main>
-  );
+  return <main className="max-w-[1440px]"></main>;
 }
