@@ -27,7 +27,7 @@ export function Header() {
       <nav>
         <ul className="flex items-center gap-4">
           {navItems.map((item) => (
-            <li key={item.href} className="font-normal text-primary-text hover:text-primary-text/75 md:text-lg">
+            <li key={item.href} className="text-primary hover:text-primary/75 font-normal md:text-lg">
               <Link href={item.href}>{item.label}</Link>
             </li>
           ))}
