@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-background: #fffcf8;
+  --color-primary-text: #332d28;
+  --color-secondary-text: #74685e;
+  --color-accent: #a45431;
+  --color-surface: #f8ede2;
+
+  --font-sans: "DM Sans", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  font-family: var(--font-sans);
+}
