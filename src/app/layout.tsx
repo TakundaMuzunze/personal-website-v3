@@ -12,9 +12,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-10">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
