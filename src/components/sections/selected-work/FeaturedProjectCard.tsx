@@ -1,12 +1,12 @@
 import { ArrowRight, Plus } from "lucide-react";
-import type { FeaturedProject as FeaturedProjectData, ProjectVisual } from "@/types/Project";
+import type { FeaturedProject as FeaturedProjectData } from "@/types/Project";
 
 type FeaturedProjectProps = {
   project: FeaturedProjectData;
 };
 
 function ProjectPanel({ project }: FeaturedProjectProps) {
-  const visual: ProjectVisual = project.visual;
+  const { visual } = project;
 
   return (
     <div className="bg-surface p-6 sm:p-8">
@@ -21,7 +21,7 @@ function ProjectPanel({ project }: FeaturedProjectProps) {
           <p className="font-medium">{project.summary}</p>
         </div>
       </div>
-      {visual.kind === "asset-workflow" && visual.steps.length > 0 && (
+      {visual.steps.length > 0 && (
         <ol
           className="flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-primary/10 pt-5 text-sm text-secondary-text"
           aria-label={`${project.title} workflow`}
@@ -68,9 +68,9 @@ function ProjectContribution({ contribution }: { contribution: NonNullable<Featu
 
 export function FeaturedProject({ project }: FeaturedProjectProps) {
   return (
-    <article className="min-w-0 overflow-hidden rounded-xl border border-primary/10 bg-background text-primary">
+    <article className="flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-primary/10 bg-background text-primary">
       <ProjectPanel project={project} />
-      <div className="px-6 py-6 sm:px-8">
+      <div className="flex-1 px-6 py-6 sm:px-8">
         <h3 className="text-xl font-medium tracking-tight">{project.title}</h3>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-secondary-text">{project.description}</p>
       </div>

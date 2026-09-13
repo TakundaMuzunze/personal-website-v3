@@ -9,7 +9,7 @@ export function SelectedWork() {
         <p className="text-sm text-muted">Delivered at iSiteTV</p>
       </div>
 
-      <div className="space-y-10 py-8">
+      <div className="grid grid-cols-1 items-stretch gap-10 py-8 md:grid-cols-2 md:gap-4">
         {featuredProjects.map((project) => (
           <FeaturedProject key={project.title} project={project} />
         ))}

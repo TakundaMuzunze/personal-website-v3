@@ -12,6 +12,7 @@ export const featuredProjects: FeaturedProject[] = [
       kind: "page-production",
       value: "90%+",
       label: "Reduction in initial setup time",
+      steps: ["Define", "Configure", "Preview"],
     },
     contribution: {
       problem: "Campaign pages were being built repeatedly across projects, with initial setup typically budgeted at 3-4 days.",
