@@ -16,15 +16,15 @@ export async function POST(request: Request) {
     return Response.json({ error: result.error }, { status: 400 });
   }
 
-  const { SENDEREMAIL, RECEIVEREMAIL, PASSWORD } = process.env;
-  if (!SENDEREMAIL || !RECEIVEREMAIL || !PASSWORD) {
+  const { SMTP_SENDER_EMAIL, SMTP_RECEIVER_EMAIL, SMTP_PASSWORD } = process.env;
+  if (!SMTP_SENDER_EMAIL || !SMTP_RECEIVER_EMAIL || !SMTP_PASSWORD) {
     return Response.json({ error: "The contact form is temporarily unavailable. Please try again later." }, { status: 503 });
   }
 
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
-      auth: { user: SENDEREMAIL, pass: PASSWORD },
+      auth: { user: SMTP_SENDER_EMAIL, pass: SMTP_PASSWORD },
       connectionTimeout: 10000,
       greetingTimeout: 10000,
       socketTimeout: 20000,
@@ -32,8 +32,8 @@ export async function POST(request: Request) {
 
     const { name, email, message } = result.data;
     const info = await transporter.sendMail({
-      from: { name: "Portfolio contact form", address: SENDEREMAIL },
-      to: RECEIVEREMAIL,
+      from: { name: "Portfolio contact form", address: SMTP_SENDER_EMAIL },
+      to: SMTP_RECEIVER_EMAIL,
       replyTo: { name, address: email },
       subject: "New portfolio contact form submission",
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

@@ -1,7 +1,6 @@
 # Takunda's portfolio
 
-Next.js App Router with React, TypeScript, Tailwind CSS, ESLint, and Prettier.
-Next.js provides the development server and build tooling; Vite is not used.
+Personal portfolio built with Next.js, React, TypeScript and Tailwind CSS, featuring selected projects, experience, light/dark themes and an email contact form.
 
 ## Development
 
@@ -10,14 +9,21 @@ npm install
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000).
+Open [localhost:3000](http://localhost:3000). Project and about copy live in `src/data`; page sections live in `src/components/sections`.
 
-- `src/app/page.tsx`: home page, currently a minimal starter.
-- `src/app/layout.tsx`: shared document layout and metadata.
-- `src/app/globals.css`: global styles and Tailwind entry point.
-- `takunda-portfolio-complete.html`: approved design reference, preserved unchanged.
+## Contact form
 
-## Checks and formatting
+Set these server-only variables in `.env.local` and in your hosting environment:
+
+```dotenv
+SMTP_SENDER_EMAIL=you@gmail.com
+SMTP_RECEIVER_EMAIL=you@example.com
+SMTP_PASSWORD=your-gmail-app-password
+```
+
+The form sends through Gmail using Nodemailer, with the visitor's address as Reply-To. Keep credentials out of Git and never use a `NEXT_PUBLIC_` prefix. On Netlify, use the Functions scope for these runtime credentials where available.
+
+## Checks
 
 ```bash
 npm run lint
@@ -26,7 +32,4 @@ npm run format:check
 npm run build
 ```
 
-Run `npm run format` to format source files. Prettier sorts Tailwind classes using
-`prettier-plugin-tailwindcss`. The original HTML mockup is excluded from formatting.
-
-Run `npm start` to serve the production build after `npm run build`.
+Use `npm run format` to format files and `npm start` to serve a production build.
