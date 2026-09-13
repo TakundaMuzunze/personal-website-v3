@@ -2,7 +2,7 @@ import { aboutMe } from "@/data/AboutMe";
 
 export function AboutMeSection() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="scroll-mt-8 border-y border-primary/10 py-16 text-primary sm:py-20">
+    <section id="about" aria-labelledby="about-heading" className="scroll-mt-8 border-y border-primary/10 py-10 text-primary lg:py-20">
       <div className="grid items-start gap-8 md:grid-cols-[1fr_2fr] md:gap-12 lg:gap-16">
         <div className="min-w-0">
           <h2 id="about-heading" className="text-2xl font-medium tracking-tight">
