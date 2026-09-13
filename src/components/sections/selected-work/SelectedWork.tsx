@@ -3,9 +3,11 @@ import { FeaturedProject } from "./FeaturedProjectCard";
 
 export function SelectedWork() {
   return (
-    <section className="py-20">
+    <section id="work" aria-labelledby="work-heading" className="scroll-mt-8 py-10 lg:py-20">
       <div className="flex items-start justify-between">
-        <h2 className="text-2xl">Selected work</h2>
+        <h2 id="work-heading" className="text-2xl">
+          Selected work
+        </h2>
         <p className="text-sm text-muted">Delivered at iSiteTV</p>
       </div>
 

@@ -3,7 +3,7 @@ import { ButtonLink } from "../ui/ButtonLink";
 
 export function HeroSection() {
   return (
-    <section className="py-20">
+    <section className="py-10 lg:py-20">
       <div className="mb-8 flex items-center gap-2 text-sm text-secondary-text">
         <span className="text-4xl text-accent">•</span>
         <p>Takunda Muzunze · Software Engineer</p>

@@ -11,7 +11,7 @@ export function ButtonLink({ href, children, variant = "primary", icon: Icon }: 
   const baseClasses = "inline-flex items-center gap-2 justify-center rounded-md px-6 py-3 text-sm font-medium transition-colors";
 
   const variants = {
-    primary: "hover:bg-accent text-white bg-primary hover:opacity-90",
+    primary: "hover:bg-accent text-button-text bg-primary hover:opacity-90",
     secondary: "bg-transparent text-primary hover:text-accent",
   };
 

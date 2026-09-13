@@ -14,7 +14,7 @@ export function ToastProvider() {
           border: "1px solid var(--color-surface)",
           borderRadius: "12px",
         },
-        success: { iconTheme: { primary: "#a45431", secondary: "#fffcf8" } },
+        success: { iconTheme: { primary: "var(--color-accent)", secondary: "var(--color-background)" } },
         error: { duration: 7000 },
       }}
     />
