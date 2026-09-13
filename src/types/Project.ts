@@ -9,18 +9,12 @@ type ProjectBase = {
   };
 };
 
-export type ProjectVisual =
-  | {
-      kind: "page-production";
-      value: string;
-      label: string;
-    }
-  | {
-      kind: "asset-workflow";
-      value: string;
-      label: string;
-      steps: string[];
-    };
+export type ProjectVisual = {
+  kind: "page-production" | "asset-workflow";
+  value: string;
+  label: string;
+  steps: string[];
+};
 
 export type FeaturedProject = ProjectBase & {
   kind: "featured";
@@ -31,4 +25,14 @@ export type FeaturedProject = ProjectBase & {
 export type CommercialProject = ProjectBase & {
   kind: "commercial";
   brand: string;
+};
+
+export type PersonalProject = {
+  title: string;
+  description: string;
+  snapshot: string;
+  tools: string[];
+  highlights: string[];
+  githubLink: string;
+  demoLink: string;
 };
