@@ -13,7 +13,7 @@ export function Button({ children, variant = "primary", icon: Icon, type = "butt
     "inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60";
 
   const variants = {
-    primary: "bg-primary text-white hover:bg-accent hover:opacity-90",
+    primary: "bg-primary text-button-text hover:bg-accent hover:opacity-90",
     secondary: "bg-transparent text-primary hover:text-accent",
   };
 
