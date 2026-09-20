@@ -1,0 +1,24 @@
+@media (prefers-reduced-motion: no-preference) {
+  .intro {
+    animation: enter 350ms ease-out both;
+  }
+
+  .details {
+    animation: enter 400ms ease-out 350ms both;
+  }
+
+  .details:focus-within {
+    animation: none;
+  }
+
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
