@@ -7,7 +7,7 @@ import { ToastProvider } from "@/components/ui/ToastProvider";
 
 export const metadata: Metadata = {
   title: "Takunda Muzunze",
-  description: "Frontend Software Engineer portfolio",
+  description: "Software Engineer portfolio",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
