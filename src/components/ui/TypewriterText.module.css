@@ -1,0 +1,32 @@
+.cursor {
+  display: inline-block;
+  width: 0;
+  height: 0.85em;
+  position: relative;
+  vertical-align: -0.04em;
+}
+
+.cursor::after {
+  content: "";
+  position: absolute;
+  left: 0.08em;
+  height: 100%;
+  border-left: 0.035em solid currentColor;
+  animation: blink 0.8s step-end 5 forwards;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    display: none;
+  }
+}
