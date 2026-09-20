@@ -6,7 +6,7 @@ export function PersonalProjects() {
     <section id="projects" aria-labelledby="projects-heading" className="scroll-mt-8 py-10 lg:py-20">
       <div className="flex items-start justify-between">
         <h2 id="projects-heading" className="text-2xl">
-          On my own time
+          In my own time
         </h2>
         <p className="text-sm text-muted">Personal projects</p>
       </div>
