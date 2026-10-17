@@ -8,12 +8,13 @@ export function PersonalProjects() {
         <h2 id="projects-heading" className="text-2xl">
           In my own time
         </h2>
+
         <p className="text-sm text-muted">Personal projects</p>
       </div>
 
       <div className="space-y-10 py-8">
-        {personalProjects.map((project) => (
-          <PersonalProjectCard key={project.title} project={project} />
+        {personalProjects.map((project, index) => (
+          <PersonalProjectCard key={project.title} project={project} isReversed={index % 2 !== 0} />
         ))}
       </div>
     </section>

@@ -5,13 +5,15 @@ import Link from "next/link";
 
 type PersonalProjectProps = {
   project: PersonalProject;
+  isReversed?: boolean;
 };
 
-export function PersonalProjectCard({ project }: PersonalProjectProps) {
+export function PersonalProjectCard({ project, isReversed = false }: PersonalProjectProps) {
   return (
     <article className="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
-      <div className="flex flex-col items-start gap-6">
+      <div className={`flex flex-col items-start gap-6 ${isReversed ? "md:order-2" : "md:order-1"}`}>
         <h3 className="text-xl font-medium tracking-tight">{project.title}</h3>
+
         <p className="text-base leading-relaxed text-secondary-text">{project.description}</p>
 
         {project.highlights.length > 0 && (
@@ -30,6 +32,7 @@ export function PersonalProjectCard({ project }: PersonalProjectProps) {
             View project
             <ExternalLink size={16} />
           </Link>
+
           <Link href={project.githubLink} target="_blank" className="flex items-center gap-2">
             View code
             <ExternalLink size={16} />
@@ -37,7 +40,7 @@ export function PersonalProjectCard({ project }: PersonalProjectProps) {
         </div>
       </div>
 
-      <div className="w-full rounded-lg bg-surface p-6">
+      <div className={`w-full rounded-lg bg-surface p-6 ${isReversed ? "md:order-1" : "md:order-2"}`}>
         <Image src={project.snapshot} alt={`${project.title} screenshot`} width={2938} height={1598} className="h-auto w-full rounded-md" />
 
         <div className="mt-4 flex flex-wrap gap-3 text-sm text-secondary-text">
